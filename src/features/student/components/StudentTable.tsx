@@ -19,7 +19,7 @@ export function StudentTable({ students }: { students: Student[] }) {
         <tbody>
           {students.map((s) => (
             <tr key={s.id}>
-              <td>{s.nationalId}</td>
+              <td>{s.cedula}</td>
               <td>
                 {s.name} {s.lastName}
               </td>

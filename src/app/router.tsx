@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
         children: [
           { path: "/", lazy: () => import("@/pages/HomePage") },
           { path: "/students", lazy: () => import("@/pages/StudentsPage") },
-          { path: "/signatures", lazy: () => import("@/pages/SignaturesPage") }
+          { path: "/signatures", lazy: () => import("@/pages/SubjectsPage") }
         ],
       },
     ],

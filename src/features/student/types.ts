@@ -6,10 +6,18 @@ export interface Subject {
 
 export interface Student {
   id: number;
-  nationalId: string;
+  cedula: string;
   name: string;
   lastName: string;
   email: string;
   subjectCount: number;
   subjects: Subject[];
+  isActive: boolean;
+}
+
+export interface createStudentRequest {
+  name: string;
+  lastName: string;
+  cedula: string;
+  email: string;
 }
