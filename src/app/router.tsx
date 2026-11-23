@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router";
+import { createBrowserRouter } from "react-router";
 import { AuthLayout } from "@/layouts/AuthLayout";
 import { MainLayout } from "@/layouts/MainLayout";
 import { ProtectedRoute } from "@/features/auth";
@@ -13,9 +13,17 @@ export const router = createBrowserRouter([
     children: [
       {
         element: <MainLayout />,
-        children: [{ path: "/", lazy: () => import("@/pages/HomePage") }],
+        children: [
+          { path: "/", lazy: () => import("@/pages/HomePage") },
+          { path: "/students", lazy: () => import("@/pages/StudentsPage") },
+          { path: "/signatures", lazy: () => import("@/pages/SignaturesPage") }
+        ],
       },
     ],
   },
-  { path: "*", element: <Navigate to="/" replace /> },
+  // Ruta comoda para manejar rutas no encontradas y redirigir al inicio
+  { 
+    path: "*",
+    lazy: () => import("@/pages/NotFoundPage"),
+  },
 ]);
